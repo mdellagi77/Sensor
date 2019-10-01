@@ -19,22 +19,20 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.0.0"),
-        .package(url: "https://github.com/NoTests/RxFeedback.swift.git", from: "3.0.0"),
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", from: "1.5.0"),
+        .package(url: "https://github.com/NoTests/RxFeedback.swift.git", from: "3.0.0")
     ],
     targets: [
         .target(
             name: "Sensor",
-            dependencies: ["RxSwift", "RxCocoa", "RxFeedback"],
+            dependencies: ["RxFeedback"],
             path: "Sensor/Sources"),
         .testTarget(
             name: "SensorUnitTests",
-            dependencies: ["Sensor", "SensorTest", "RxSwift", "RxCocoa"],
+            dependencies: ["Sensor", "SensorTest"],
             path: "Sensor/UnitTests"),
         .target(
             name: "SensorTest",
-            dependencies: ["RxCocoa", "RxTest"],
+            dependencies: [],
             path: "SensorTest/Sources"),
         .testTarget(
             name: "SensorTestUnitTests",
